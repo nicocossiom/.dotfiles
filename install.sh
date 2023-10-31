@@ -40,10 +40,10 @@ brew update
 brew upgrade
 
 echo "Cloning dotfiles"
-git clone https://github.com/nicocossiom/.dotfiles ~/.mackup
+git clone https://github.com/nicocossiom/.dotfiles ~/.dotfiles
 
 # install brew packages
-brew bundle install --file=~/.mackup/Brewfile
+brew bundle install --file=~/.dotfiles/Brewfile
 brew cleanup
 
 # setup ssh
