@@ -29,9 +29,6 @@ if ! command -v brew &>/dev/null; then
   echo "Adding brew to to zsh"
   (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/pepperonico/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
-  if ! command -v brew &>/dev/null; then
-    source ~/.zprofile
-  fi
 fi
 
 echo "Updating+Upgrading Homebrew"
