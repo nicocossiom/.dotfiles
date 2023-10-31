@@ -9,18 +9,17 @@ IFS=$'\n\t'
 sudo -v
 
 printf "Installing Xcode CLI tools...\n"
-if [ xcode-select --install -eq 130 ]; then
-  printf "Xcode already installed"
+if [[ $(xcode-select --install >& /dev/null) -eq 1 ]]; then
+  printf "Xcode already installed or there was some error in the installer"
 else
   printf "%s\n" "💡 ALT+TAB to view and accept Xcode license window."
   read -p "Have you completed the Xcode CLI tools install (y/n)? " xcode_response
   if [[ "$xcode_response" != "y" ]]; then
     printf "ERROR: Xcode CLI tools must be installed before proceeding.\n"
-    exit 1
   fi
 fi
-echo "Installing Rosetta2"
 
+echo "Installing Rosetta2"
 softwareupdate --install-rosetta --agree-to-license
 
 # check if brew installed
