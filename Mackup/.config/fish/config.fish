@@ -21,7 +21,7 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /Users/pepperonico/mambaforge/bin/conda
-    eval /Users/pepperonico/mambaforge/bin/conda "shell.fish" "hook" $argv | source
+    eval /Users/pepperonico/mambaforge/bin/conda "shell.fish" hook $argv | source
 end
 # <<< conda initialize <<<
 
