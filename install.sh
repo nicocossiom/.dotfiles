@@ -40,7 +40,8 @@ brew install python
 echo "Cloning dotfiles"
 source ~/.zprofile
 git clone https://github.com/nicocossiom/.dotfiles ~/.dotfiles
-
+echo "Accepting xcode liscence"
+sudo xcodebuild -license accept
 # install brew packages
 brew bundle install --file=~/.dotfiles/Brewfile
 brew cleanup
