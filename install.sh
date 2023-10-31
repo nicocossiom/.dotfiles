@@ -5,38 +5,45 @@ set -o errexit
 set -o pipefail
 IFS=$'\n\t'
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
-
 # Ask for the administrator password upfront
 sudo -v
 
 printf "Installing Xcode CLI tools...\n"
-xcode-select --install
-
-printf "%s\n" "💡 ALT+TAB to view and accept Xcode license window."
-read -p "Have you completed the Xcode CLI tools install (y/n)? " xcode_response
-if [[ "$xcode_response" != "y" ]]; then
-  printf "ERROR: Xcode CLI tools must be installed before proceeding.\n"
-  exit 1
+if [ xcode-select --install -eq 130 ]; then
+  printf "Xcode already installed"
+else
+  printf "%s\n" "💡 ALT+TAB to view and accept Xcode license window."
+  read -p "Have you completed the Xcode CLI tools install (y/n)? " xcode_response
+  if [[ "$xcode_response" != "y" ]]; then
+    printf "ERROR: Xcode CLI tools must be installed before proceeding.\n"
+    exit 1
+  fi
 fi
+echo "Installing Rosetta2"
 
-if [[ "$(/usr/bin/arch)" == "arm64" ]]; then
-  softwareupdate --install-rosetta --agree-to-license
-fi
+softwareupdate --install-rosetta --agree-to-license
 
 # check if brew installed
 if ! command -v brew &>/dev/null; then
   echo "'brew' could not be found, installing"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "Adding brew to to zsh"
+  (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/pepperonico/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  if ! command -v brew &>/dev/null; then
+    source ~/.zprofile
+  fi
 fi
 
+echo "Updating+Upgrading Homebrew"
 brew update
 brew upgrade
 
+echo "Cloning dotfiles"
+git clone https://github.com/nicocossiom/.dotfiles ~/.mackup
+
 # install brew packages
-brew bundle install --file=./Brewfile
+brew bundle install --file=~/.mackup/Brewfile
 brew cleanup
 
 # setup ssh
@@ -75,7 +82,7 @@ wait 120
 
 # mackup setup
 echo "Setting up dotfiles"
-git clone https://github.com/nicocossiom/dotfiles ~/.mackup
+mackup restore 
 
 echo "Setting up yabai"
 yabai --install-service
