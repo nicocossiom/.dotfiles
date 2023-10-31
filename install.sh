@@ -38,13 +38,18 @@ fi
 echo "Updating+Upgrading Homebrew"
 brew update
 brew upgrade
+echo "Installing python for mackup"
 
+brew install python
 echo "Cloning dotfiles"
+source ~/.zprofile
 git clone https://github.com/nicocossiom/.dotfiles ~/.dotfiles
 
 # install brew packages
 brew bundle install --file=~/.dotfiles/Brewfile
 brew cleanup
+brew autoremove
+brew doctor
 
 # setup ssh
 mkdir ~/.ssh
