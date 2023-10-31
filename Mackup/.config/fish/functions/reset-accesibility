@@ -1,0 +1,4 @@
+function reset_accesibilty
+	sudo tccutil reset Accessibility
+end
+
