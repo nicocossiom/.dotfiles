@@ -22,6 +22,7 @@ fi
 echo "Installing Rosetta2"
 softwareupdate --install-rosetta --agree-to-license
 
+echo "Checking if brew is installed"
 # check if brew installed
 if ! command -v brew &>/dev/null; then
   echo "'brew' could not be found, installing"
@@ -35,7 +36,6 @@ echo "Updating+Upgrading Homebrew"
 brew update
 brew upgrade
 echo "Installing python for mackup"
-
 brew install python
 echo "Cloning dotfiles"
 source ~/.zprofile
@@ -47,6 +47,7 @@ brew cleanup
 brew autoremove
 brew doctor
 
+echo "Setting up ssh"
 # setup ssh
 mkdir ~/.ssh
 chmod 700 ~/.ssh
@@ -60,6 +61,7 @@ eval $(ssh-agent)
 ssh-add ~/.ssh/ssh_key
 # add to keychain
 ssh-add -K
+echo "Started agent and added key to agent"
 
 cat >~/.ssh/config <<EOL
 AddKeysToAgent yes
@@ -74,10 +76,11 @@ Host *
 Match all
   Include ~/.fig/ssh
 EOL
+echo "Added ssh config file"
 
 # launch setapp and install apps
-open -a Setapp.app
 
+open -a Setapp.app
 echo "Login into Setapp, go to favorites and click on install all."
 wait 120
 
