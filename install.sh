@@ -8,14 +8,14 @@ IFS=$'\n\t'
 # Ask for the administrator password upfront
 sudo -v
 
-printf "Installing Xcode CLI tools...\n"
-if [[ $(xcode-select --install >& /dev/null) -eq 1 ]]; then
-  printf "Xcode already installed or there was some error in the installer"
+echo "Installing Xcode CLI tools...\n"
+if [[ $(xcode-select --install) -eq 1 ]]; then
+  echo "Skipping Xcode as it is installed"
 else
-  printf "%s\n" "💡 ALT+TAB to view and accept Xcode license window."
+  echo "%s\n" "💡 ALT+TAB to view and accept Xcode license window."
   read -p "Have you completed the Xcode CLI tools install (y/n)? " xcode_response
   if [[ "$xcode_response" != "y" ]]; then
-    printf "ERROR: Xcode CLI tools must be installed before proceeding.\n"
+    echo "ERROR: Xcode CLI tools must be installed before proceeding.\n"
   fi
 fi
 
