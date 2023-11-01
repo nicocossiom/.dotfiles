@@ -18,17 +18,6 @@ status --is-interactive; and rbenv init - fish | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /Users/pepperonico/mambaforge/bin/conda
-    eval /Users/pepperonico/mambaforge/bin/conda "shell.fish" hook $argv | source
-end
-# <<< conda initialize <<<
-
-# ohmpyposh theme
-oh-my-posh init fish --config ~/.dotfiles/gruvbox.json | source
-oh-my-posh completion fish | source
-
 # z jump
 zoxide init fish | source
 
@@ -49,3 +38,18 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# ohmpyposh theme
+oh-my-posh init fish --config ~/.dotfiles/gruvbox.json | source
+oh-my-posh completion fish | source
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/homebrew/Caskroom/mambaforge/base/bin/conda
+    eval /opt/homebrew/Caskroom/mambaforge/base/bin/conda "shell.fish" hook $argv | source
+end
+
+if test -f "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
+    source "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
+end
+# <<< conda initialize <<<

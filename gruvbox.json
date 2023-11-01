@@ -58,7 +58,8 @@
           "foreground": "#ffffff",
           "background": "#458588",
           "properties": {
-            "display_mode": "context"
+            "home_enabled": true,
+            "display_mode": "environment"
           },
           "template": "{{ if and .Venv (ne .Venv \"base\") }} {{ .Venv }}@{{ .Full }}{{ end }}"
         },
@@ -96,7 +97,7 @@
           "trailing_diamond": "\ue0b4",
           "background": "#8400ff",
           "foreground": "#ffffff",
-          "template": "[.NET {{ .Full }}]"
+          "template": "[󰪮 {{ .Full }}]"
         },
         {
           "type": "go",
@@ -106,6 +107,19 @@
           "foreground": "#ffffff",
           "background": "#7FD5EA",
           "template": " ‭ﳑ {{ .Full }} "
+        },
+        {
+          "type": "buf",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "foreground": "#ffffff",
+          "background": "#161ede",
+          "template": "󰿘 {{ .Full }}",
+          "properties": {
+            "home_enabled": false,
+            "display_mode": "files"
+          }
         }
       ]
     },
