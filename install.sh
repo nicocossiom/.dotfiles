@@ -50,9 +50,8 @@ brew doctor
 
 echo "Setting up ssh"
 # setup ssh
-mkdir ~/.ssh
-chmod 700 ~/.ssh
-touch ~/.ssh/config
+mkdir -p ~/.ssh
+touch -c ~/.ssh/config
 chmod 600 ~/.ssh/config
 
 ssh-keygen -t ed25519 -b 4096 -C "nicocossiom@gmail.com" -f ssh_key
