@@ -26,7 +26,9 @@ end
 # <<< conda initialize <<<
 
 # ohmpyposh theme
-source ~/.config/fish/functions/oh-my-posh.fish
+oh-my-posh init fish --config .config/fish/themes/gruvbox.json | source
+oh-my-posh completion fish | source
+
 # z jump
 zoxide init fish | source
 
