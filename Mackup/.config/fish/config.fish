@@ -26,12 +26,14 @@ end
 # <<< conda initialize <<<
 
 # ohmpyposh theme
-oh-my-posh init fish --config .config/fish/themes/gruvbox.json | source
+oh-my-posh init fish --config ~/.dotfiles/gruvbox.json | source
 oh-my-posh completion fish | source
 
 # z jump
 zoxide init fish | source
 
+# iterm2 integration
+source ~/.config/fish/functions/iterm2_shell_integration.fish
 
 # fzf keybingings
 fzf_configure_bindings --directory=\cf --git_status=\cS --git_log=\a --processes=\cO
