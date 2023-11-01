@@ -8,11 +8,11 @@ tap "koekeishiya/formulae"
 tap "ohueter/tap"
 brew "automake"
 brew "libtool"
-brew "openssl@3"
-brew "openssh"
 brew "asdf"
 brew "bat"
 brew "bison"
+brew "node"
+brew "bitwarden-cli"
 brew "boost"
 brew "bottom"
 brew "buf"
@@ -47,9 +47,10 @@ brew "mas"
 brew "maven"
 brew "mysql"
 brew "neovim"
-brew "node"
+brew "openssh"
 brew "protobuf"
 brew "protolint"
+brew "python@3.11"
 brew "ruby-build"
 brew "rbenv"
 brew "redis"
@@ -90,6 +91,7 @@ cask "jetbrains-toolbox"
 cask "keyclu"
 cask "libreoffice"
 cask "libreoffice-language-pack"
+cask "linear-linear"
 cask "logi-options-plus"
 cask "logseq"
 cask "macfuse"
@@ -115,16 +117,3 @@ cask "warp"
 cask "whatsapp-beta"
 cask "zed"
 cask "zoom"
-mas "Apple Configurator", id: 1037126344
-mas "Bitwarden", id: 1352778147
-mas "Craft", id: 1487937127
-mas "Day Progress", id: 6450280202
-mas "DevCleaner", id: 1388020431
-mas "Developer", id: 640199958
-mas "Habitify", id: 1111447047
-mas "Icon Set Creator", id: 939343785
-mas "Image2icon", id: 992115977
-mas "Kindle", id: 302584613
-mas "Microsoft To Do", id: 1274495053
-mas "Xcode", id: 497799835
-mas "TestFlight", id: 899247664
