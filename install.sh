@@ -61,23 +61,7 @@ eval $(ssh-agent)
 ssh-add ~/.ssh/ssh_key
 echo "Started agent and added key to agent"
 
-cat >~/.ssh/config <<EOL
-AddKeysToAgent yes
-UseKeychain yes
-
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/ssh_key
-
-# Fig ssh integration. Keep at the bottom of this file.
-Match all
-  Include ~/.fig/ssh
-EOL
-echo "Added ssh config file"
-
 # launch setapp and install apps
-
 open -a Setapp.app
 echo "Login into Setapp, go to favorites and click on install all."
 wait 120
