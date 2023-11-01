@@ -59,8 +59,6 @@ mv ssh_key.pub ~/.ssh
 mv ssh_key ~/.ssh
 eval $(ssh-agent)
 ssh-add ~/.ssh/ssh_key
-# add to keychain
-ssh-add -K
 echo "Started agent and added key to agent"
 
 cat >~/.ssh/config <<EOL
