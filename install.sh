@@ -67,6 +67,7 @@ echo "Login into Setapp, go to favorites and click on install all."
 
 # mackup setup
 echo "Setting up dotfiles"
+mv ~/.dotfiles/.mackup.cfg ~/.mackup.cfg
 mackup restore 
 
 echo "Setting up yabai"
