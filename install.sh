@@ -88,6 +88,9 @@ git config --global user.name "Nicolás Cossío Miravalles"
 git config --global user.email "nicocossiom@gmail.com"
 git config --global core.editor "code"
 
+#
+
+
 echo "Setting up System Settings"
 osascript -e 'tell application "System Preferences" to quit'
 

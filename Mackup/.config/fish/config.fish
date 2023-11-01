@@ -52,4 +52,8 @@ end
 if test -f "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
     source "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
 end
+set -gx ITERM2_SQUELCH_MARK 1
 # <<< conda initialize <<<
+function set_poshcontext
+    iterm2_prompt_mark
+end

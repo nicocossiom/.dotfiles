@@ -44,6 +44,7 @@ brew "latexindent"
 brew "lsd"
 brew "mackup"
 brew "mas"
+brew "autokbisw"
 brew "maven"
 brew "mysql"
 brew "neovim"
@@ -95,6 +96,7 @@ cask "linear-linear"
 cask "logi-options-plus"
 cask "logseq"
 cask "macfuse"
+cask "mambaforge"
 cask "menuwhere"
 cask "microsoft-auto-update"
 cask "microsoft-edge"
@@ -117,3 +119,16 @@ cask "warp"
 cask "whatsapp-beta"
 cask "zed"
 cask "zoom"
+mas "Apple Configurator", id: 1037126344
+mas "Bitwarden", id: 1352778147
+mas "Craft", id: 1487937127
+mas "Day Progress", id: 6450280202
+mas "DevCleaner", id: 1388020431
+mas "Developer", id: 640199958
+mas "Habitify", id: 1111447047
+mas "Icon Set Creator", id: 939343785
+mas "Image2icon", id: 992115977
+mas "Kindle", id: 302584613
+mas "Microsoft To Do", id: 1274495053
+mas "TestFlight", id: 899247664
+mas "Xcode", id: 497799835
