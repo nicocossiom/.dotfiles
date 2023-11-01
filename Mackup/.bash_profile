@@ -25,7 +25,7 @@ fi
 
 [[ -s "/Users/pepperonico/.gvm/scripts/gvm" ]] && source "/Users/pepperonico/.gvm/scripts/gvm"
 
+eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"
-
-eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
