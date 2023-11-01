@@ -64,7 +64,6 @@ echo "Started agent and added key to agent"
 # launch setapp and install apps
 open -a Setapp.app
 echo "Login into Setapp, go to favorites and click on install all."
-wait 120
 
 # mackup setup
 echo "Setting up dotfiles"
@@ -80,6 +79,8 @@ skhd --start-service
 
 sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
 chsh -s /opt/homebrew/bin/fish
+echo "Changed shell to fish"
+
 
 # setup git
 git config --global user.name "Nicolás Cossío Miravalles"
