@@ -1,3 +1,6 @@
+# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# sudo yabai --load-sa
+
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
 
@@ -5,17 +8,17 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 # autobalance
-yabai -m config auto_balance off
+yabai -m config auto_balance on
 
 # window padding
-yabai -m config top_padding 4
-yabai -m config bottom_padding 4
-yabai -m config left_padding 4
-yabai -m config right_padding 4
-yabai -m config window_gap 4
+yabai -m config top_padding 7
+yabai -m config bottom_padding 7
+yabai -m config left_padding 7
+yabai -m config right_padding 7
+yabai -m config window_gap 7
 
 # windows modifications
-yabai -m config window_shadow float
+yabai -m config window_shadow on
 
 # -- mouse settings --
 
@@ -49,3 +52,14 @@ yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^CleanShot X$" manage=off
 yabai -m rule --add app="^Fig$" manage=off
 yabai -m rule --add app="^Presentify$" manage=off
+
+
+# floating windows float on top of all
+yabai -m config window_topmost off
+
+yabai -m config window_animation_duration 0.20
+yabai -m config window_opacity_duration 0.0
+yabai -m config window_border on 
+yabai -m config window_border_width 4
+
+~/.dotfiles/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=2.0 2>/dev/null 1>&2 &
