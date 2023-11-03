@@ -28,8 +28,11 @@ if ! command -v brew &>/dev/null; then
   echo "'brew' could not be found, installing"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "Adding brew to to zsh"
-  (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/pepperonico/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+  (
+    echo
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"'
+  ) >>/Users/pepperonico/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 echo "Updating+Upgrading Homebrew"
@@ -68,7 +71,7 @@ echo "Login into Setapp, go to favorites and click on install all."
 # mackup setup
 echo "Setting up dotfiles"
 mv ~/.dotfiles/.mackup.cfg ~/.mackup.cfg
-mackup restore 
+mackup restore
 
 echo "Setting up yabai"
 yabai --install-service
@@ -82,16 +85,27 @@ sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
 chsh -s /opt/homebrew/bin/fish
 echo "Changed shell to fish"
 
-
 # setup git
 git config --global user.name "Nicolás Cossío Miravalles"
 git config --global user.email "nicocossiom@gmail.com"
 git config --global core.editor "code"
 
-#
+# start autokbisw
+echo "Starting services and apps"
+brew services start autokbisw
+open -a Captin.app
+open -a "Microsoft Edge.app"
+code -n
+open -a WhatsApp.app
+open -a AltTab.app
+open -a Bartender.app
+open -a logioptionsplus.app
+open -a OneDrive.app
+open -a iTerm.app
+open -a Fig.app
+open -a Mos.app
 
 
-echo "Setting up System Settings"
 osascript -e 'tell application "System Preferences" to quit'
 
 # ################################################################################

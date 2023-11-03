@@ -51,3 +51,7 @@ ctrl + alt - l : yabai -m window --warp east
 ctrl + alt - q : yabai --stop-service
 ctrl + alt - s : yabai --start-sercice
 ctrl + alt - r : yabai --restart-service
+
+# -- Space switching --
+# ctrl - right : yabai -m space --focus next
+# ctrl - left : yabai -m space --focus prev

@@ -21,9 +21,6 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # z jump
 zoxide init fish | source
 
-# iterm2 integration
-source ~/.config/fish/functions/iterm2_shell_integration.fish
-
 # fzf keybingings
 fzf_configure_bindings --directory=\cf --git_status=\cS --git_log=\a --processes=\cO
 
@@ -32,6 +29,7 @@ source ~/.config/fish/completions/ipfs-completion.fish
 
 # dotnet completions
 complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
+
 # pnpm
 set -gx PNPM_HOME /Users/pepperonico/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
@@ -52,8 +50,12 @@ end
 if test -f "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
     source "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
 end
-set -gx ITERM2_SQUELCH_MARK 1
 # <<< conda initialize <<<
-function set_poshcontext
-    iterm2_prompt_mark
-end
+# set -gx ITERM2_SQUELCH_MARK 1
+# function set_poshcontext
+#     iterm2_prompt_mark
+# end
+# iterm2 integration
+# source ~/.config/fish/functions/iterm2_shell_integration.fish
+
+# -- Scripting addition --
