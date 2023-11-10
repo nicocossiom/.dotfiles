@@ -51,11 +51,9 @@ if test -f "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
     source "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
 end
 # <<< conda initialize <<<
-# set -gx ITERM2_SQUELCH_MARK 1
-# function set_poshcontext
-#     iterm2_prompt_mark
-# end
+set -gx ITERM2_SQUELCH_MARK 1
+function set_poshcontext
+	iterm2_prompt_mark
+end
 # iterm2 integration
-# source ~/.config/fish/functions/iterm2_shell_integration.fish
-
-# -- Scripting addition --
+source ~/.config/fish/functions/iterm2_shell_integration.fish

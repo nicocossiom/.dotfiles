@@ -1,5 +1,4 @@
 #! /usr/bin/env sh
-
 # -- Changing Window Focus --
 
 # change window focus within space
@@ -8,7 +7,7 @@ alt - k : yabai -m window --focus north
 alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east
 
-#change focus between external displays (left and right)
+# change focus between external displays (left and right)
 alt - s: yabai -m display --focus west
 alt - g: yabai -m display --focus east
 
@@ -33,7 +32,7 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 shift + alt - e : yabai -m space --balance
 
 # make window bigger
-# shift + alt - + : 
+# shift + alt - + :
 
 # -- Moving Windows Around --
 
@@ -60,9 +59,9 @@ ctrl - left : yabai -m space --focus prev || yabai -m space --focus last
 
 ctrl - right : yabai -m space --focus next || yabai -m space --focus first
 
-# -- Space management -- 
-ctrl - d : yabai -m space --destroy
-ctrl - n : yabai -m space --create
+# -- Space management --
+shift + ctrl - d : yabai -m space --destroy
+shift + ctrl - n : yabai -m space --create
 
 # increase window size
 shift + alt - a : yabai -m window --resize left:-20:0
@@ -75,4 +74,3 @@ shift + cmd - a : yabai -m window --resize left:20:0
 shift + cmd - s : yabai -m window --resize bottom:0:-20
 shift + cmd - w : yabai -m window --resize top:0:20
 shift + cmd - d : yabai -m window --resize right:-20:0
-
