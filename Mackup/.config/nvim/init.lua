@@ -212,7 +212,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim', opts = {}, lazy = false },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -548,6 +548,13 @@ local servers = {
 
   lua_ls = {
     Lua = {
+      format = {
+        enable = true,
+        defaultConfig = {
+          indent_style = "space",
+          indent_size = 2,
+        }
+      },
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
@@ -560,7 +567,7 @@ require('lint').linters_by_ft = {
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
     require("lint").try_lint()
-  end,
+  end
 })
 -- Utilities for creating configurations
 local util = require "formatter.util"

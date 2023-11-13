@@ -8,7 +8,8 @@ alias px=pnpx
 alias b=bun
 alias bx=bunx
 alias fd=dust
-
+alias vim=nvim
+set --export EDITOR nvim
 fish_ssh_agent
 
 # rbenv setup

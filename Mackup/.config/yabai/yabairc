@@ -1,6 +1,6 @@
 # Scripting addition in order for some features to work
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
@@ -9,7 +9,7 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 # autobalance
-yabai -m config auto_balance on
+yabai -m config auto_balance off
 
 # window padding
 yabai -m config top_padding 7
@@ -19,7 +19,7 @@ yabai -m config right_padding 7
 yabai -m config window_gap 7
 
 # windows modifications
-yabai -m config window_shadow on
+yabai -m config window_shadow float
 
 # -- mouse settings --
 
