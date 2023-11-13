@@ -37,8 +37,7 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now :)
 --]]
-
--- Set <space> as the leader key
+-- Set <spacea> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -545,7 +544,11 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+  remark_ls = {
+    settings = {
+      requireConfig = false
+    }
+  },
   lua_ls = {
     Lua = {
       format = {
@@ -562,7 +565,12 @@ local servers = {
 }
 
 require('lint').linters_by_ft = {
-  proto = { 'buf_lint' }
+  proto = { 'buf_lint' },
+  markdown = { 'markdownlint' }
+}
+require('lint').linters.markdownlint.args = {
+  '--disable',
+  'MD013'
 }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()

@@ -10,8 +10,9 @@ alias bx=bunx
 alias fd=dust
 alias vim=nvim
 set --export EDITOR nvim
-fish_ssh_agent
 
+fish_ssh_agent
+ssh-add ~/.ssh/ssh_key 2>&1 1>/dev/null
 # rbenv setup
 status --is-interactive; and rbenv init - fish | source
 
@@ -52,9 +53,3 @@ if test -f "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
     source "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
 end
 # <<< conda initialize <<<
-set -gx ITERM2_SQUELCH_MARK 1
-function set_poshcontext
-	iterm2_prompt_mark
-end
-# iterm2 integration
-source ~/.config/fish/functions/iterm2_shell_integration.fish
