@@ -10,9 +10,10 @@ alias bx=bunx
 alias fd=dust
 alias vim=nvim
 set --export EDITOR nvim
+set --export DOTNET_ROOT /opt/homebrew/opt/dotnet/libexec
 
 fish_ssh_agent
-ssh-add ~/.ssh/ssh_key 2>&1 1>/dev/null
+ssh-add ~/.ssh/ssh_key >/dev/null 2>/dev/null
 # rbenv setup
 status --is-interactive; and rbenv init - fish | source
 
