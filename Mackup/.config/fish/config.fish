@@ -12,6 +12,9 @@ alias vim=nvim
 set --export EDITOR nvim
 set --export DOTNET_ROOT /opt/homebrew/opt/dotnet/libexec
 
+set -U fish_greeting
+set -g fish_greeting
+
 fish_ssh_agent
 ssh-add ~/.ssh/ssh_key >/dev/null 2>/dev/null
 # rbenv setup
@@ -54,3 +57,4 @@ if test -f "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
     source "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
 end
 # <<< conda initialize <<<
+set -Ux fish_tmux_config ~/.config/tmux/tmux.conf

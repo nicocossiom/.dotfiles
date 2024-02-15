@@ -1,0 +1,19 @@
+return {}
+-- return {
+-- 	"nvim-cmp",
+-- 	dependencies = {
+-- 		{
+-- 			"petertriho/cmp-git",
+-- 			opts = {
+-- 				-- remotes = { "upstream" },
+-- 			},
+-- 		},
+-- 	},
+-- 	opts = function(_, opts)
+-- 		table.insert(opts.sources, #opts.sources + 1, {
+-- 			name = "git",
+-- 			priority = 500,
+-- 			group_index = 0,
+-- 		})
+-- 	end,
+-- }

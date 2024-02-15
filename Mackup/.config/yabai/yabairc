@@ -54,6 +54,8 @@ yabai -m rule --add app="^CleanShot X$" manage=off
 yabai -m rule --add app="^Fig$" layer=above #disable Tiling window management for Fig
 yabai -m rule --add app="^Fig$" manage=off #disable Tiling window management for Fig
 yabai -m rule --add app="^Presentify$" manage=off
+yabai -m rule --add app="^Stats$" manage=off
+yabai -m rule --add app="^Hidden Bar$" manage=off
 
 
 yabai -m config window_animation_duration 0.20

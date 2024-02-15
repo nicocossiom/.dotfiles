@@ -4,3 +4,5 @@
 
 vim.opt.winbar = "%=%m %f"
 vim.g.root_spec = { "cwd" }
+vim.api.nvim_set_var("terminal_emulator", "fish")
+vim.opt.shell = "fish"
